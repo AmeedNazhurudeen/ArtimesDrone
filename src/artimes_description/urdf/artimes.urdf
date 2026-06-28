@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<robot name="artimes">
+
+  <!-- ================= BASE ================= -->
+
+  <link name="base_link">
+
+    <visual>
+      <geometry>
+        <box size="0.4 0.4 0.08"/>
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.15 0.15 0.15 1"/>
+      </material>
+
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.4 0.4 0.08"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1.5"/>
+
+      <origin xyz="0 0 0"/>
+
+      <inertia
+        ixx="0.02"
+        ixy="0"
+        ixz="0"
+        iyy="0.02"
+        iyz="0"
+        izz="0.04"/>
+    </inertial>
+
+  </link>
+
+  <!-- ================= ROTOR 1 ================= -->
+
+  <link name="rotor_1">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="rotor_1_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_1"/>
+    <origin xyz="0.2 0.2 0.05"/>
+  </joint>
+
+  <!-- ================= ROTOR 2 ================= -->
+
+  <link name="rotor_2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <joint name="rotor_2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_2"/>
+    <origin xyz="-0.2 0.2 0.05"/>
+  </joint>
+
+  <!-- ================= ROTOR 3 ================= -->
+
+  <link name="rotor_3">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <joint name="rotor_3_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_3"/>
+    <origin xyz="-0.2 -0.2 0.05"/>
+  </joint>
+
+  <!-- ================= ROTOR 4 ================= -->
+
+  <link name="rotor_4">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.01"/>
+      </geometry>
+
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <joint name="rotor_4_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rotor_4"/>
+    <origin xyz="0.2 -0.2 0.05"/>
+  </joint>
+
+</robot>
+
